@@ -95,7 +95,7 @@
  12. Here you have two options, **upload and test** your application in https://test.pypi.org/ 
  **or upload as a release version** in https://pypi.org/ (this is a summary of 
  https://packaging.python.org/tutorials/packaging-projects/):
-* **TEST:**
+* **TEST (PRE-PRODUCTION):**
     1. Get your `API token`, if you do not have one you need:
         1. Create an account or login in https://test.pypi.org/
         2. Create a new `API token` in https://test.pypi.org/manage/account/
@@ -114,7 +114,7 @@
         ```python
            from simple_pypi_template import func_of_my_module
         ```    
-* **OFICIAL:**
+* **RELEASE (PRODUCTION):**
     1. Get your `API token`, if you do not have one you need:
         1. Create an account or login in https://pypi.org/
         2. Create a new `API token` in https://pypi.org/manage/account/
