@@ -1,4 +1,4 @@
-# Name of your project (example according to this project folder: PyPI Template)
+# Name of your project (example according to this example project folder: Simple PyPI Template)
 Short description about your project
 
 This is a template, maybe you do not need all of these points, or you need add new ones.

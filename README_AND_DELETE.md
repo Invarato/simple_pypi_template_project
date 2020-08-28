@@ -64,7 +64,7 @@
        * Example Static: 
     [![Author](https://img.shields.io/badge/Author-Ramon%20Invarato-green.svg)](https://github.com/Invarato)
        * Example Dynamic: 
-    [![PyPI](https://img.shields.io/pypi/v/sorted_in_disk)](https://pypi.org/project/sorted-in-disk/)
+    [![PyPI](https://img.shields.io/pypi/v/simple-pypi-template)](https://pypi.org/project/simple-pypi-template/)
     * Create a console **video example**: https://asciinema.org/
         * Example: [![asciicast](https://asciinema.org/a/14.png)](https://asciinema.org/a/14)
 
@@ -98,38 +98,42 @@
 * **TEST (PRE-PRODUCTION):**
     1. Get your `API token`, if you do not have one you need:
         1. Create an account or login in https://test.pypi.org/
-        2. Create a new `API token` in https://test.pypi.org/manage/account/
+        2. Create a new `test API token` in https://test.pypi.org/manage/account/
     2. Upload your package:
         ```
             python -m twine upload --repository testpypi dist/*
         ```
-        1. When ask you for user write: `__token__`
-        2. When ask you for password write: `<<< Your API token >>>`
+        1. When ask you for the user, then write: `__token__`
+        2. When ask you for the password, then write: `<<< Your test API token >>>`
     3. Test your package installing with (where `simple-pypi-template` is your project name write 
     in `setup.py` in `name`):
         ```
             pip install -i https://test.pypi.org/simple/ simple-pypi-template
         ```
-    4. Try to import it in other Python scrypt and use it. Example:
+        4. You can see the last version of your project in (change last part of url with your project name): 
+        https://test.pypi.org/project/sorted-in-disk/simple-pypi-template/
+    5. Try to import it in other Python scrypt and use it. Example:
         ```python
            from simple_pypi_template import func_of_my_module
         ```    
 * **RELEASE (PRODUCTION):**
     1. Get your `API token`, if you do not have one you need:
         1. Create an account or login in https://pypi.org/
-        2. Create a new `API token` in https://pypi.org/manage/account/
+        2. Create a new `API token` (this is different to `test API token`) in https://pypi.org/manage/account/
     2. Upload your package:
         ```
-            python -m twine upload --repository testpypi dist/*
+            python -m twine upload dist/**
         ```
-        1. When ask you for user write: `__token__`
-        2. When ask you for password write: `<<< Your API token >>>`
+        1. When ask you for the user, then write: `__token__`
+        2. When ask you for the password, then write: `<<< Your API token >>>`
     3. Check your package installing with (where `simple-pypi-template` is your project name write 
     in `setup.py` in `name`):
         ```
             pip install simple-pypi-template
         ```
-    4. Try to import it in other Python scrypt and use it. Example:
+    4. You can see the last version of your project in (change last part of url with your project name): 
+    https://pypi.org/project/simple-pypi-template/
+    5. Try to import it in other Python scrypt and use it. Example:
         ```python
            from simple_pypi_template import func_of_my_module
         ```
