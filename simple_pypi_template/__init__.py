@@ -1,0 +1,1 @@
+from simple_pypi_template.simple_pypi_template import *
