@@ -3,6 +3,12 @@ Short description about your project
 
 This is a template, maybe you do not need all of these points, or you need add new ones.
 
+**Note:** if you are reading this from PyPI this is only an example of this template, you do no install this project with 
+PIP because it is only a folder with templates (this not have any functionally). To get full template go to 
+https://github.com/Invarato/simple_pypi_template_project and pull or download project folder that it is the 
+full template. For more information, tricks, easy steps to create your own Python module and upload to PyPi go to 
+https://github.com/Invarato/simple_pypi_template_project/blob/master/README_AND_DELETE.md
+
 
 ## Table of contents
  * [Technologies](#technologies)
