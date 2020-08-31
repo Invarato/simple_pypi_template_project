@@ -22,17 +22,25 @@
  3. **Check `__init__.py`** if you want to extract one level the package.
     Example, if you hava a blank `__init__.py` third developers need import a method in your package with:
      ```python
-        from simple_pypi_template.simple_pypi_template import func_of_my_module
+    from simple_pypi_template.simple_pypi_template import func_of_my_module
      ```
     If you want the easy import way:
     ```python
-       from simple_pypi_template import func_of_my_module
+    from simple_pypi_template import func_of_my_module
     ```
-    You need to add in `__init__.py` this line:
+    You need to import this line in `__init__.py`:
     ```python
     from simple_pypi_template.simple_pypi_template import *
     ```
- 
+    But, it is strongly recommend only import classes, functions or variables you really want to be public. 
+    I suggested delimiting imports in `__init__.py` (only classes, functions or variables are going to be usable 
+    for thirds developers), and you add `__all__` variable to limit the visibility (when somebody imports 
+    with `*`, then he only imports all contain in the list `__all__`):
+    ```python
+    from simple_pypi_template.simple_pypi_template import func_of_my_module
+    __all__ = ["func_of_my_module"]
+    ```
+    
  4. **Create your tests** in `tests` folder. In this template structure you can find an example with `doctest` 
  in `doctest_simple_pypi_template.py` file and `unittest` in `test_simple_pypi_template.py` file; chose the appropriate test
   for your project.
@@ -71,7 +79,7 @@
  8. Optionally you can **generate your documentation** website with (and save it in `doc` folder):
     * **pydoc** (Python includes this by default), example in project folder:
     ```
-        python -m pydoc -w simple_pypi_template
+    python -m pydoc -w simple_pypi_template
     ```
     * **pycco**: https://pycco-docs.github.io/pycco/
     * **sphinx**: https://www.sphinx-doc.org/en/master/
@@ -84,12 +92,12 @@
 
  10. If you do not have **installed `Twine`**, this is the moment (skip this step if you have already installed):
      ```
-        python -m pip install --user --upgrade twine
+     python -m pip install --user --upgrade twine
      ```
 
  11. **Build your project** with (go to `setup.py` in project dir):
      ```
-        python simple_pypi_template_project/setup.py sdist bdist_wheel
+     python simple_pypi_template_project/setup.py sdist bdist_wheel
      ```
 
  12. Here you have two options, **upload and test** your application in https://test.pypi.org/ 
@@ -108,13 +116,13 @@
     3. Test your package installing with (where `simple-pypi-template` is your project name write 
     in `setup.py` in `name`):
         ```
-            pip install -i https://test.pypi.org/simple/ simple-pypi-template
+        pip install -i https://test.pypi.org/simple/ simple-pypi-template
         ```
         4. You can see the last version of your project in (change last part of url with your project name): 
         https://test.pypi.org/project/sorted-in-disk/simple-pypi-template/
     5. Try to import it in other Python scrypt and use it. Example:
         ```python
-           from simple_pypi_template import func_of_my_module
+        from simple_pypi_template import func_of_my_module
         ```    
 * **RELEASE (PRODUCTION):**
     1. Get your `API token`, if you do not have one you need:
@@ -122,18 +130,18 @@
         2. Create a new `API token` (this is different to `test API token`) in https://pypi.org/manage/account/
     2. Upload your package:
         ```
-            python -m twine upload dist/**
+        python -m twine upload dist/**
         ```
         1. When ask you for the user, then write: `__token__`
         2. When ask you for the password, then write: `<<< Your API token >>>`
     3. Check your package installing with (where `simple-pypi-template` is your project name write 
     in `setup.py` in `name`):
         ```
-            pip install simple-pypi-template
+        pip install simple-pypi-template
         ```
     4. You can see the last version of your project in (change last part of url with your project name): 
     https://pypi.org/project/simple-pypi-template/
     5. Try to import it in other Python scrypt and use it. Example:
         ```python
-           from simple_pypi_template import func_of_my_module
+        from simple_pypi_template import func_of_my_module
         ```
